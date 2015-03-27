@@ -1,0 +1,17 @@
+{
+  "name": "app1",
+  "version": "0.0.0",
+  "description": "react reflux boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dcroitoru",
+  "license": "ISC",
+  "devDependencies": {
+    "react": "^0.13.1",
+    "react-router": "^0.13.2",
+    "reflux": "^0.2.7",
+    "jsx-loader": "^0.12.2"
+  }
+}

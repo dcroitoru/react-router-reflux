@@ -1,5 +1,5 @@
 var Rx = require('rx');
-var actions = ['addMessage', 'addTodo']
+var actions = ['addMessage', 'addTodo', 'login']
 var subjects = {};
 var exp = {};
 var sub;

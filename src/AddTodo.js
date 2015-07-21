@@ -4,6 +4,7 @@ var Intent = require('./Intent');
 var Store2 = require('./Store');
 
 var AddTodo = React.createClass({
+	getInitialState: Store2.getInitialState,
 	componentDidMount: function() {
 		Store2.subscribe(function (state) {
 			console.log(state);
@@ -17,8 +18,8 @@ var AddTodo = React.createClass({
 		ref.value = '';
 	},
 
-	onSubj: function () {
-		Intent.incrementCounter();
+	login: function () {
+		Intent.login();
 	},
 
 	render: function () {
@@ -26,9 +27,10 @@ var AddTodo = React.createClass({
 		return (
 			<div>
 				<input ref="input"/><button onClick={this.onAdd}>add</button>
-				<button onClick={this.onSubj}>subj</button>
 
 				<div>{this.state ? this.state.message : ''}</div>
+				<button onClick={this.login}>login</button>
+				<div>{this.state && this.state.loggedIn ? 'logged in': 'not logged in'}</div>
 			</div>
 			);
 	}

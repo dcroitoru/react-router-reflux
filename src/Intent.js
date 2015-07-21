@@ -1,5 +1,5 @@
 var Rx = require('rx');
-var actions = ['addMessage', 'addTodo', 'login']
+var actions = ['addMessage', 'addTodo', 'login', 'logout', 'getUsers', 'refresh', 'closeUser'];
 var subjects = {};
 var exp = {};
 var sub;
@@ -12,7 +12,5 @@ actions.forEach(function (action) {
 
 exp.subjects = subjects;
 exp.actions = actions;
-
-console.log(exp);
 
 module.exports = exp;

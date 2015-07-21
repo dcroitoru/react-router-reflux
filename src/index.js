@@ -11,13 +11,15 @@ var AppActions = require('./AppActions');
 
 var AddTodo = require('./AddTodo');
 var ListTodos = require('./ListTodos');
+var ListUsers = require('./ListUsers');
 
 var App = React.createClass({
 	render: function () {
 		return (
 			<div>
 				<div>
-					<Link to="app">Home</Link> | <Link to="add">Add todo </Link> | <Link to="list">List todos</Link>
+					<Link to="app">Home</Link> | <Link to="add">Add todo </Link> | <Link to="list">List todos</Link>| <Link to="users">List users</Link>
+
 				</div>
 				<hr/>
 				<RouteHandler />
@@ -36,6 +38,7 @@ var routes = (
 		<DefaultRoute handler={Home} />
 		<Route name="add" handler={AddTodoView} />
 		<Route name="list" handler={ListTodosView} />
+		<Route name="users" handler={ListUsers} />
 	</Route>
 	);
 

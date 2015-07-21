@@ -1,23 +1,19 @@
 var React = require('react');
-var Reflux = require('reflux');
-var Store = require('./AppStore');
 var Intent = require('./Intent');
-var Store2 = require('./Store');
+var Store = require('./Store');
 
+var sub;
 var ListTodos = React.createClass({
-	mixins: [Reflux.connect(Store)],
-	getInitialState: function() {
-		return Store2.getInitialState();
-	},
-	componentDidMount: function() {
-		console.log('store initial state', Store2.getValue());
-		Store2.subscribe(function (state) {
-			console.log(state);
+	componentDidMount: function () {
+		sub = Store.subscribe(function (state) {
 			this.setState(state);
 		}.bind(this));
 	},
+	componentWillUnmount: function() {
+		sub.dispose();
+	},
 	render: function () {
-		var m = this.state.messages.map(function (message, i) {
+		var m = this.state && this.state.messages.map(function (message, i) {
 			return <li key={i}>{message}</li>
 		});
 		return (
